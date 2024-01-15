@@ -16,7 +16,7 @@ import {
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { FormError } from "../form-error";
-import { FormSucess } from "../form-success";
+import { FormSucess } from "../form-error copy";
 
 export const LoginForm = () => {
   const form = useForm<z.infer<typeof LoginSchema>>({
