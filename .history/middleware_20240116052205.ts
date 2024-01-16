@@ -25,16 +25,10 @@ export default auth((req) => {
 
   if (isAuthRoute) {
     if (isLoggedIn) {
-      return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
+      return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT));
     }
     return null;
   }
-
-  if (!isLoggedIn && !isPublicRoutes) {
-    return Response.redirect(new URL("/auth/login", nextUrl));
-  }
-
-  return null;
 });
 
 // Optionally, don't invoke Middleware on some paths
