@@ -2,7 +2,7 @@ import React from "react";
 
 function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="h-full py-2 flex items-center justify-center  bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-400 to-blue-800">
+    <div className="h-3/4 flex items-center justify-center  bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-400 to-blue-800">
       {children}
     </div>
   );
