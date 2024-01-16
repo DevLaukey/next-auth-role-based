@@ -33,15 +33,13 @@ export const LoginForm = () => {
   });
 
   const onSubmit = (values: z.infer<typeof LoginSchema>) => {
-    setError("");
-    setSuccess("");
-
     startTransition(() => {
       login(values).then((data) => {
-        setError(data.error);
-        setSuccess(data.success);
+  setError(data.error);
+  setSuccess(data.success);
+        });
       });
-    });
+    
   };
 
   return (
@@ -89,8 +87,8 @@ export const LoginForm = () => {
               )}
             />
           </div>
-          <FormSucess message={error} />
-          <FormError message={success} />
+          <FormSucess message="" />
+          <FormError message="" />
           <Button type="submit" className="w-full" disabled={isPending}>
             Login
           </Button>
