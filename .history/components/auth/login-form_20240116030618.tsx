@@ -20,7 +20,8 @@ import { FormSucess } from "../form-success";
 import { login } from "@/actions/login";
 
 export const LoginForm = () => {
-  const [isPending, startTransition] = useTransition();
+
+  const [isPending, startTransition] = useTransition()
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
     defaultValues: {
@@ -29,11 +30,11 @@ export const LoginForm = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof LoginSchema>) => {
+  const onSubmit = (values: z.infer<typeof LoginSchema>) => { 
     startTransition(() => {
       login(values);
     });
-  };
+  }
 
   return (
     <CardWrapper
@@ -69,12 +70,9 @@ export const LoginForm = () => {
                 <FormItem>
                   <FormLabel>Password</FormLabel>
                   <FormControl />
-                  <Input
-                    {...field}
-                    placeholder="******"
+                  <Input {...field} placeholder="******"
                     type="password"
-                    disabled={isPending}
-                  />
+                    disabled={ isPending} />
                   <FormMessage {...field} />
                 </FormItem>
               )}
